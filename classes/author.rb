@@ -6,7 +6,7 @@ class Author
     def initialize(first_name, last_name)
         @id = Random.rand(1..1000)
         @first_name = first_name
-        @last_name = first_name
+        @last_name = last_name
         @items = []
     end
 
@@ -19,11 +19,3 @@ class Author
         end
     end
 end
-
-
-# item1 = Item.new('2000/12/12')
-# item2 = Item.new('2020/02/02')
-# author = Author.new('Abdul', 'Duls')
-# author.add_item(item1)
-# author.add_item(item2)
-# print author.items

@@ -14,6 +14,3 @@ class Game < Item
         super && DateTime.now.year - @last_played_at.year > 2
     end
 end
-
-game = Game.new('game_of_thrones','2021/12/12','2020/12/12')
-puts game.can_be_archived?
