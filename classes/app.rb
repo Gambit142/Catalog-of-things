@@ -8,10 +8,10 @@ require_relative '../modules/author_ui'
 class App
   include BookUI
   include LabelUI
-  include MusicAlbumUI
-  include GenreUI
-  include GameUI
-  include AuthorUI
+  # include MusicAlbumUI
+  # include GenreUI
+  # include GameUI
+  # include AuthorUI
 
   def initialize
     @books = []
@@ -48,12 +48,19 @@ class App
   end
 
   def homepage(input)
+
     case input
-    when 13
+    when 1
+        display_books
+    when 5
+        display_label
+    when 7
+        create_book
+    when 10
       puts 'Thanks for using our library app , hope to see you soon ! '
       exit
     else
-      puts 'please Enter a valid number from 1 to 13'
+      puts 'please Enter a valid number from 1 to 10'
     end
   end
 

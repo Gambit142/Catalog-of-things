@@ -1,5 +1,6 @@
-require_relative './classes/label'
+require_relative '../classes/label'
 require_relative './associations'
+require_relative '../classes/book'
 
 module BookUI
     include Associations
@@ -16,9 +17,9 @@ module BookUI
         created_book = Book.new(publisher,cover_state,published_date)
 
         add_label_info(created_book)
-        add_author_info(create_book)
-        add_genre_info(create_book)
-        
+        add_author_info(created_book)
+        add_genre_info(created_book)
+
         @books << created_book
         puts 'Book successfully added ! '
     end
