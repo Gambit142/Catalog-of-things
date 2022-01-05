@@ -1,5 +1,6 @@
 class App
   # rubocop:disable Metrics
+  
   def menu
     puts 'Welcome to your Catalog of things!'
     puts "\n"
@@ -27,6 +28,7 @@ class App
     print "\nEnter option from above list: "
     gets.chomp.to_i
   end
+
   # rubocop:enable Metrics
 
   def homepage(input)
