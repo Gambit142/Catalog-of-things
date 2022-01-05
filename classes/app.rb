@@ -1,6 +1,6 @@
 class App
   # rubocop:disable Metrics
-  
+
   def menu
     puts 'Welcome to your Catalog of things!'
     puts "\n"
