@@ -48,14 +48,13 @@ class App
   end
 
   def homepage(input)
-
     case input
     when 1
-        display_books
+      display_books
     when 5
-        display_label
+      display_label
     when 7
-        create_book
+      create_book
     when 10
       puts 'Thanks for using our library app , hope to see you soon ! '
       exit
