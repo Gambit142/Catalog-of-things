@@ -1,5 +1,26 @@
+require_relative '../modules/book_ui'
+require_relative '../modules/label_ui'
+require_relative '../modules/musicalbum_ui'
+require_relative '../modules/genre_ui'
+require_relative '../modules/game_ui'
+require_relative '../modules/author_ui'
+
 class App
-  # rubocop:disable Metrics
+  include BookUI
+  include LabelUI
+  include MusicAlbumUI
+  include GenreUI
+  include GameUI
+  include AuthorUI
+
+  def initialize
+    @books = []
+    @labels = []
+    @musicalbums = []
+    @genre = []
+    @games = []
+    @authors = []
+  end
 
   def menu
     puts 'Welcome to your Catalog of things!'
@@ -9,17 +30,14 @@ class App
     @options = {
       '1': 'List all books',
       '2': 'List all music albums',
-      '3': 'List all movies',
-      '4': 'List all games',
-      '5': 'List all genres',
-      '6': 'List all labels',
-      '7': 'List all authors',
-      '8': 'List all sources',
-      '9': 'Add a book',
-      '10': 'Add a music album',
-      '11': 'Add a movie',
-      '12': 'Add a game',
-      '13': 'Exit App'
+      '3': 'List all games',
+      '4': 'List all genres',
+      '5': 'List all labels',
+      '6': 'List all authors',
+      '7': 'Add a book',
+      '8': 'Add a music album',
+      '9': 'Add a game',
+      '10': 'Exit App'
     }
 
     @options.each do |index, string|
@@ -28,8 +46,6 @@ class App
     print "\nEnter option from above list: "
     gets.chomp.to_i
   end
-
-  # rubocop:enable Metrics
 
   def homepage(input)
     case input
