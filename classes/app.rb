@@ -1,8 +1,11 @@
 class App
+  # rubocop:disable Metrics
+
   def menu
     puts 'Welcome to your Catalog of things!'
     puts "\n"
     puts 'Please choose an option by entering a number: '
+
     @options = {
       '1': 'List all books',
       '2': 'List all music albums',
@@ -25,6 +28,8 @@ class App
     print "\nEnter option from above list: "
     gets.chomp.to_i
   end
+
+  # rubocop:enable Metrics
 
   def homepage(input)
     case input

@@ -17,4 +17,20 @@ class Item
   def move_to_archive
     @archived = can_be_archived?
   end
+
+  def add_genre(genre)
+    @genre = genre
+  end
 end
+
+# item = Item.new('2000/12/12')
+# # puts item.published_date
+# # puts item.archived
+# # puts item.id
+
+# puts item.can_be_archived?
+# puts item.archived
+# item.move_to_archive
+# puts item.archived
+
+puts DateTime.now
