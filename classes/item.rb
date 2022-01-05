@@ -8,4 +8,12 @@ class Item
         @published_date = Date.parse(published_date)
         @archived = archived
     end
+
+    def can_be_archived?
+        DateTime.now.year - @published_date.year > 10 
+    end
+
+    def move_to_archive
+        @archived = can_be_archived?
+    end
 end
