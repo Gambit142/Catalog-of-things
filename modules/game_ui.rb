@@ -17,7 +17,7 @@ module GameUI
 
     print 'Is your game Multiplayer?  (y/n) '
     player_option = gets.chomp
-    multiplayer = player_option == "y" || player_option == "Y"
+    multiplayer = %w[y Y].include?(player_option)
     created_game = Game.new(game_title, multiplayer, last_played_at, published_date)
 
     add_author_info(created_game)
@@ -29,7 +29,7 @@ module GameUI
 
   def display_games
     if @games.length.zero?
-      puts "No games added yet !"
+      puts 'No games added yet !'
     else
       puts "List of all your games : \n"
       @games.each_with_index do |game, index|
