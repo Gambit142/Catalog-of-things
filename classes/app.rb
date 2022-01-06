@@ -48,6 +48,7 @@ class App
     gets.chomp.to_i
   end
 
+  # rubocop:disable Metrics/CyclomaticComplexity
   def homepage(input)
     case input
     when 1
@@ -70,6 +71,7 @@ class App
     end
   end
 
+  # rubocop:enable Metrics/CyclomaticComplexity
   def run
     loop do
       homepage(menu)
