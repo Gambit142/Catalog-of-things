@@ -1,7 +1,5 @@
 require_relative '../modules/book_ui'
 require_relative '../modules/label_ui'
-require_relative '../modules/musicalbum_ui'
-require_relative '../modules/genre_ui'
 require_relative '../modules/game_ui'
 require_relative '../modules/author_ui'
 

@@ -31,7 +31,7 @@ module Associations
   end
 
   def add_author_info(item)
-    print 'Who is the author of the item?'
+    print 'Who is the author of the game? '
     print 'first name :'
     first_name = gets.chomp
 
