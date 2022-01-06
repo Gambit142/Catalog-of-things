@@ -2,8 +2,8 @@ require_relative '../modules/book_ui'
 require_relative '../modules/label_ui'
 require_relative '../modules/musicalbum_ui'
 require_relative '../modules/genre_ui'
-require_relative '../modules/game_ui'
-require_relative '../modules/author_ui'
+# require_relative '../modules/game_ui'
+# require_relative '../modules/author_ui'
 require_relative '../modules/book_storage'
 require_relative '../modules/label_storage'
 require_relative '../modules/musicalbum_storage'
@@ -37,12 +37,12 @@ class App
   end
 
   def load_data
-    read_games
-    read_authors
+    # read_games
+    # read_authors
     read_books
     read_labels
-    read_musicalbums
-    read_genres
+    # read_musicalbums
+    # read_genres
   end
 
   def menu
