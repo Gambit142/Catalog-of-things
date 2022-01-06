@@ -1,9 +1,16 @@
 require_relative '../classes/label'
 require_relative './associations'
 require_relative '../classes/book'
+require_relative './label_ui'
+require_relative './book_storage'
+require_relative './label_storage'
+require 'json'
 
 module BookUI
   include Associations
+  include LabelStorage
+  include BookStorage
+  include LabelUI
 
   def create_book
     print 'Published date:'
@@ -21,6 +28,8 @@ module BookUI
     add_genre_info(created_book)
 
     @books << created_book
+    save_book
+    save_label
     puts 'Book successfully added ! '
   end
 

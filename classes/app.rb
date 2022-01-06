@@ -2,28 +2,51 @@ require_relative '../modules/book_ui'
 require_relative '../modules/label_ui'
 require_relative '../modules/game_ui'
 require_relative '../modules/author_ui'
+require_relative '../modules/musicalbum_ui'
+require_relative '../modules/genre_ui'
+require_relative '../modules/book_storage'
+require_relative '../modules/label_storage'
+require_relative '../modules/musicalbum_storage'
+require_relative '../modules/genre_storage'
+require_relative '../modules/author_storage'
+require_relative '../modules/game_storage'
+require 'json'
 
 class App
+  include MusicAlbumUI
+  include GenreUI
   include BookUI
   include LabelUI
-  # include MusicAlbumUI
-  # include GenreUI
   include GameUI
   include AuthorUI
+  include BookStorage
+  include LabelStorage
+  include MusicAlbumStorage
+  include GenreStorage
+  include GameStorage
+  include AuthorStorage
 
   def initialize
     @books = []
     @labels = []
     @musicalbums = []
-    @genre = []
+    @genres = []
     @games = []
     @authors = []
   end
 
+  def load_data
+    # read_games
+    # read_authors
+    read_books
+    read_labels
+    # read_musicalbums
+    # read_genres
+  end
+
   def menu
-    puts 'Welcome to your Catalog of things!'
-    puts "\n"
-    puts 'Please choose an option by entering a number: '
+    Dir.mkdir 'json' unless Dir.exist? 'json'
+    puts "Welcome to your Catalog of things!\n"
 
     @options = {
       '1': 'List all books',
@@ -45,12 +68,17 @@ class App
     gets.chomp.to_i
   end
 
+  # rubocop:disable Metrics/CyclomaticComplexity
   def homepage(input)
     case input
     when 1
       display_books
     when 3
       display_games
+    when 2
+      display_musicalbum
+    when 4
+      display_genre
     when 5
       display_label
     when 6
@@ -59,6 +87,8 @@ class App
       create_book
     when 9
       create_game
+    when 8
+      create_musicalbum
     when 10
       puts 'Thanks for using our library app , hope to see you soon ! '
       exit
@@ -67,6 +97,7 @@ class App
     end
   end
 
+  # rubocop:enable Metrics/CyclomaticComplexity
   def run
     loop do
       homepage(menu)
