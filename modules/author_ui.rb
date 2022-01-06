@@ -6,9 +6,9 @@ module AuthorUI
   
         puts "List of all Authors: \n"
         @authors.each_with_index do |author, index|
-          print "#{index + 1} game :"
-          print "title: #{author.title}"
-          print "color: #{author.color}"
+          print "#{author.first_name} "
+          print "#{author.last_name} "
+          puts "\n"
         end
       end
     end

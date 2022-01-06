@@ -4,7 +4,7 @@ require_relative '../classes/author'
 
 module Associations
   def add_label_info(item)
-    print 'What is the label of the item?'
+    print 'What is the label of the item? '
     print 'title:'
     title = gets.chomp
 
@@ -19,7 +19,7 @@ module Associations
   end
 
   def add_genre_info(item)
-    print 'What is the genre of the item?'
+    print 'What is the genre of the item? '
     print 'name:'
     genre_name = gets.chomp
 
