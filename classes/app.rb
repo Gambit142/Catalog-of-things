@@ -6,10 +6,11 @@ require_relative '../modules/game_ui'
 require_relative '../modules/author_ui'
 
 class App
+  include MusicAlbumUI
+  include GenreUI
   include BookUI
   include LabelUI
-  # include MusicAlbumUI
-  # include GenreUI
+
   # include GameUI
   # include AuthorUI
 
@@ -17,7 +18,7 @@ class App
     @books = []
     @labels = []
     @musicalbums = []
-    @genre = []
+    @genres = []
     @games = []
     @authors = []
   end
@@ -47,14 +48,21 @@ class App
     gets.chomp.to_i
   end
 
+  # rubocop:disable Metrics/CyclomaticComplexity
   def homepage(input)
     case input
     when 1
       display_books
+    when 2
+      display_musicalbum
+    when 4
+      display_genre
     when 5
       display_label
     when 7
       create_book
+    when 8
+      create_musicalbum
     when 10
       puts 'Thanks for using our library app , hope to see you soon ! '
       exit
@@ -63,6 +71,7 @@ class App
     end
   end
 
+  # rubocop:enable Metrics/CyclomaticComplexity
   def run
     loop do
       homepage(menu)

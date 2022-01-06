@@ -1,3 +1,4 @@
+require 'json'
 require_relative '../classes/label'
 require_relative '../classes/genre'
 require_relative '../classes/author'
@@ -27,7 +28,7 @@ module Associations
 
     genre.add_item(item)
 
-    @genre << genre
+    @genres << genre
   end
 
   def add_author_info(item)
