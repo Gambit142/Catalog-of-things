@@ -8,7 +8,6 @@ module Associations
     print 'What is the label of the item?'
     print 'title:'
     title = gets.chomp
-    item.label = title
 
     print 'color:'
     color = gets.chomp

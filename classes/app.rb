@@ -6,10 +6,11 @@ require_relative '../modules/game_ui'
 require_relative '../modules/author_ui'
 
 class App
-  # include BookUI
-  # include LabelUI
   include MusicAlbumUI
   include GenreUI
+  include BookUI
+  include LabelUI
+
   # include GameUI
   # include AuthorUI
 
@@ -49,17 +50,23 @@ class App
 
   def homepage(input)
     case input
-    when 4
-      display_genre
+    when 1
+      display_books
     when 2
       display_musicalbum
+    when 4
+      display_genre
+    when 5
+      display_label
+    when 7
+      create_book
     when 8
       create_musicalbum
     when 10
       puts 'Thanks for using our library app , hope to see you soon ! '
       exit
     else
-      puts 'please Enter a valid number from 1 to 13'
+      puts 'please Enter a valid number from 1 to 10'
     end
   end
 
