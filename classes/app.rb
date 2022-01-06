@@ -6,18 +6,18 @@ require_relative '../modules/game_ui'
 require_relative '../modules/author_ui'
 
 class App
-  include BookUI
-  include LabelUI
+  # include BookUI
+  # include LabelUI
   include MusicAlbumUI
   include GenreUI
-  include GameUI
-  include AuthorUI
+  # include GameUI
+  # include AuthorUI
 
   def initialize
     @books = []
     @labels = []
     @musicalbums = []
-    @genre = []
+    @genres = []
     @games = []
     @authors = []
   end
@@ -49,7 +49,13 @@ class App
 
   def homepage(input)
     case input
-    when 13
+    when 4
+      display_genre
+    when 2
+      display_musicalbum
+    when 8
+      create_musicalbum
+    when 10
       puts 'Thanks for using our library app , hope to see you soon ! '
       exit
     else
