@@ -1,8 +1,9 @@
 require 'date'
 
 class Item
-  attr_writer :genre, :source, :author, :label
+  attr_writer :genre, :source, :author
   attr_reader :published_date, :archived, :id
+  attr_accessor :label
 
   def initialize(published_date, archived: false)
     @id = Random.rand(1...1000)
@@ -22,15 +23,3 @@ class Item
     @genre = genre
   end
 end
-
-# item = Item.new('2000/12/12')
-# # puts item.published_date
-# # puts item.archived
-# # puts item.id
-
-# puts item.can_be_archived?
-# puts item.archived
-# item.move_to_archive
-# puts item.archived
-
-puts DateTime.now
