@@ -24,4 +24,19 @@ module GameUI
     puts 'Game created successfully! '
   end
 
+  def display_games
+    if @games.length.zero?
+      puts 'No games added yet !'
+    else
+      puts 'List of all your games : \n'
+      @games.each_with_index do |game, index|
+        print "#{index + 1} game :"
+        print "publisher: #{game.publisher}"
+        print "publish date: #{game.published_date}"
+        print "cover state: #{game.cover_state}"
+      end
+
+    end
+  end
+
 end
