@@ -1,5 +1,5 @@
 module AuthorUI
-    def display_author
+    def display_authors
       if @authors.length.zero?
         puts 'No authors registered yet!'
       else

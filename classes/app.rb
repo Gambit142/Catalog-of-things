@@ -10,8 +10,8 @@ class App
   include LabelUI
   # include MusicAlbumUI
   # include GenreUI
-  # include GameUI
-  # include AuthorUI
+  include GameUI
+  include AuthorUI
 
   def initialize
     @books = []
@@ -51,10 +51,16 @@ class App
     case input
     when 1
       display_books
+    when 3
+      display_games
     when 5
       display_label
+    when 6
+      display_authors
     when 7
       create_book
+    when 9
+      create_game
     when 10
       puts 'Thanks for using our library app , hope to see you soon ! '
       exit
