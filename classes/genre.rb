@@ -13,6 +13,6 @@ class Genre
   end
 
   def to_s
-    "Name of Genre: #{@name}"
+    "Name of Genre: #{@name}\n#{@items[0].class.name}"
   end
 end
