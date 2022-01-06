@@ -15,4 +15,8 @@ module GameStorage
           @games.push(game_instance)
         end
       end
+
+      def save_game
+        File.write('./json/game.json', JSON.dump(@games))
+      end
 end
