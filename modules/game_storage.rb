@@ -1,0 +1,2 @@
+module GameStorage
+end

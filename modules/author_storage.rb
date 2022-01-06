@@ -1,0 +1,2 @@
+module AuthorStorage
+end

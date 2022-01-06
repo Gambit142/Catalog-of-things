@@ -1,0 +1,2 @@
+module BookStorage
+end
