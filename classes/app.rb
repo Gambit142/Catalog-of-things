@@ -47,9 +47,7 @@ class App
 
   def menu
     Dir.mkdir 'json' unless Dir.exist? 'json'
-    puts 'Welcome to your Catalog of things!'
-    puts "\n"
-    puts 'Please choose an option by entering a number: '
+    puts "Welcome to your Catalog of things!\n"
 
     @options = {
       '1': 'List all books',

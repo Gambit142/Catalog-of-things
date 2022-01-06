@@ -18,9 +18,9 @@ class Label
   end
 
   def to_json(json)
-    json.generate({     
-                         title: title,
-                         color: color
-                       })
+    json.generate({
+                    title: title,
+                    color: color
+                  })
   end
 end

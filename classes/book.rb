@@ -15,11 +15,11 @@ class Book < Item
 
   def to_json(json)
     json.generate({
-                         date: @published_date,
-                         cover_state: @cover_state,
-                         publisher: @publisher,
-                         title: @label.title,
-                         color: @label.color
-                       })
+                    date: @published_date,
+                    cover_state: @cover_state,
+                    publisher: @publisher,
+                    title: @label.title,
+                    color: @label.color
+                  })
   end
 end
