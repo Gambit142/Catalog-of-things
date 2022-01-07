@@ -5,7 +5,8 @@ module AuthorUI
     else
 
       puts "List of all Authors: \n"
-      @authors.each_with_index do |author, _index|
+      @authors.each_with_index do |author, index|
+        print "#{index + 1}: "
         print "#{author.first_name.capitalize} "
         print "#{author.last_name.capitalize} "
         puts "\n"
