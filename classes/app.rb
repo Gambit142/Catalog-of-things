@@ -69,6 +69,8 @@ class App
   end
 
   # rubocop:disable Metrics/CyclomaticComplexity
+  # rubocop:disable Metrics/MethodLength
+
   def homepage(input)
     case input
     when 1
@@ -98,9 +100,12 @@ class App
   end
 
   # rubocop:enable Metrics/CyclomaticComplexity
+
   def run
     loop do
       homepage(menu)
     end
   end
+
+  # rubocop:enable Metrics/MethodLength
 end
