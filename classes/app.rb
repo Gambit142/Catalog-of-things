@@ -1,9 +1,9 @@
 require_relative '../modules/book_ui'
 require_relative '../modules/label_ui'
+require_relative '../modules/game_ui'
+require_relative '../modules/author_ui'
 require_relative '../modules/musicalbum_ui'
 require_relative '../modules/genre_ui'
-# require_relative '../modules/game_ui'
-# require_relative '../modules/author_ui'
 require_relative '../modules/book_storage'
 require_relative '../modules/label_storage'
 require_relative '../modules/musicalbum_storage'
@@ -17,15 +17,14 @@ class App
   include GenreUI
   include BookUI
   include LabelUI
+  include GameUI
+  include AuthorUI
   include BookStorage
   include LabelStorage
   include MusicAlbumStorage
   include GenreStorage
   include GameStorage
   include AuthorStorage
-
-  # include GameUI
-  # include AuthorUI
 
   def initialize
     @books = []
@@ -37,8 +36,8 @@ class App
   end
 
   def load_data
-    # read_games
-    # read_authors
+    read_games
+    read_authors
     read_books
     read_labels
     # read_musicalbums
@@ -70,18 +69,26 @@ class App
   end
 
   # rubocop:disable Metrics/CyclomaticComplexity
+  # rubocop:disable Metrics/MethodLength
+
   def homepage(input)
     case input
     when 1
       display_books
+    when 3
+      display_games
     when 2
       display_musicalbum
     when 4
       display_genre
     when 5
       display_label
+    when 6
+      display_authors
     when 7
       create_book
+    when 9
+      create_game
     when 8
       create_musicalbum
     when 10
@@ -93,9 +100,12 @@ class App
   end
 
   # rubocop:enable Metrics/CyclomaticComplexity
+
   def run
     loop do
       homepage(menu)
     end
   end
+
+  # rubocop:enable Metrics/MethodLength
 end

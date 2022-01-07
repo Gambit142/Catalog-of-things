@@ -37,12 +37,13 @@ module BookUI
     if @books.length.zero?
       puts 'No books added yet !'
     else
-      puts 'List of all your books : \n'
+      puts "List of all your books : \n"
       @books.each_with_index do |book, index|
         print "#{index + 1} book :"
-        print "publisher: #{book.publisher}"
-        print "publish date: #{book.published_date}"
+        print "publisher: #{book.publisher}, "
+        print "publish date: #{book.published_date}, "
         print "cover state: #{book.cover_state}"
+        puts "\n"
       end
 
     end
