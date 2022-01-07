@@ -19,11 +19,14 @@ module GameUI
     player_option = gets.chomp
     multiplayer = %w[y Y].include?(player_option)
     created_game = Game.new(game_title, multiplayer, last_played_at, published_date)
-
+    print 'created gme '
+    puts created_game
     add_author_info(created_game)
     add_genre_info(created_game)
 
-    @games << created_game
+    @games.push(created_game)
+    save_authors
+    save_game
     puts 'Game created successfully! '
   end
 

@@ -36,8 +36,8 @@ class App
   end
 
   def load_data
-    # read_games
-    # read_authors
+    read_games
+    read_authors
     read_books
     read_labels
     # read_musicalbums

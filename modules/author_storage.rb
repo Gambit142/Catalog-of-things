@@ -14,7 +14,5 @@ module AuthorStorage
         end
       end
 
-    def save_authors
-        File.write('./json/authors.json', JSON.dump(@authors))
-    end
+
 end
