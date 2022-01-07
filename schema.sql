@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS label(
     id SERIAL PRIMARY KEY,
     title VARCHAR(50),
     color VARCHAR(50),
-    items INT [],
+    items INT []
 );
 
 CREATE TABLE IF NOT EXISTS musicalbum (
