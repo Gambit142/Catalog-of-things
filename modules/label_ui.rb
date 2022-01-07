@@ -11,7 +11,7 @@ module LabelUI
         print "#{index + 1}) Label:\n"
         print "title: #{label.title}, color: #{label.color}."
         puts "\n"
-        puts "_______________________________________"
+        puts '_______________________________________'
         puts "\n"
       end
     end

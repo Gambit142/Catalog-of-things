@@ -45,7 +45,7 @@ module BookUI
         print "Publish date: #{book.published_date}, "
         print "Cover state: #{book.cover_state}."
         puts "\n"
-        puts "_______________________________________________________________________"
+        puts '_______________________________________________________________________'
         puts "\n"
       end
 

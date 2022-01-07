@@ -7,11 +7,11 @@ module GenreUI
     else
       puts "List of all Genres: \n"
       @genres.each_with_index do |genre, index|
-      print "\n"
-      print "#{index + 1}) Genre:\n"
-      print "#{genre}\n"
-      puts "_______________________________________"
-      puts "\n"
+        print "\n"
+        print "#{index + 1}) Genre:\n"
+        print "#{genre}\n"
+        puts '_______________________________________'
+        puts "\n"
       end
     end
   end

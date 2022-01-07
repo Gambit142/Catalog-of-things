@@ -12,7 +12,7 @@ module AuthorUI
         print "First Name: #{author.first_name.capitalize}, "
         print "Last Name: #{author.last_name.capitalize}, "
         puts "\n"
-        puts "_______________________________________"
+        puts '_______________________________________'
         puts "\n"
       end
     end

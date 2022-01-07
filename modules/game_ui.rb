@@ -41,7 +41,7 @@ module GameUI
         print "publish date: #{game.published_date}, "
         print "multiplayer : #{game.multiplayer}."
         puts "\n"
-        puts "____________________________________________________"
+        puts '____________________________________________________'
         puts "\n"
       end
     end
