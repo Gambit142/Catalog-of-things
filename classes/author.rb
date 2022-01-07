@@ -11,11 +11,14 @@ class Author
   end
 
   def add_item(item)
-    if @items.include?(item)
-      puts 'item already exists'
-    else
-      @items.push(item)
-      item.author = self
-    end
+    @items.push(item) unless @items.include?(item)
+    item.add_author(self)
+  end
+
+  def to_json(json)
+    json.generate({
+                    first_name: @first_name,
+                    last_name: @last_name
+                  })
   end
 end
