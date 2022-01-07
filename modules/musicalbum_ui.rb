@@ -1,10 +1,13 @@
-require 'json'
 require_relative './associations'
+require_relative './musicalbum_storage'
+require_relative './genre_storage'
 require_relative '../classes/musicalbum'
 require_relative '../classes/label'
 
 module MusicAlbumUI
   include Associations
+  include MusicAlbumStorage
+  include GenreStorage
 
   def create_musicalbum
     print 'What date was this album published?'
@@ -19,6 +22,8 @@ module MusicAlbumUI
     add_genre_info(musicalbum)
 
     @musicalbums << musicalbum
+    save_genre
+    save_album
     puts 'Music Album successfully added ! '
   end
 

@@ -1,5 +1,3 @@
-require 'json'
-
 module GenreUI
   def display_genre
     if @genres.length.zero?
