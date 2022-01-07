@@ -14,5 +14,8 @@ module AuthorStorage
         end
       end
 
-
+      def save_authors
+        puts @authors
+        File.write('./json/authors.json', JSON.generate(@authors))
+    end
 end
