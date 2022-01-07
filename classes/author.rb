@@ -18,7 +18,7 @@ class Author
   def to_json(json)
     json.generate({
                     first_name: @first_name,
-                    last_name: @last_name,
+                    last_name: @last_name
                   })
   end
 end

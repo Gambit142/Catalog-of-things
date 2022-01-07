@@ -3,19 +3,19 @@ require_relative '../classes/author'
 require 'json'
 
 module AuthorStorage
-    def read_authors
-        return unless File.exist?('./json/authors.json')
-    
-        file = File.read('./json/authors.json')
-        file_data = JSON.parse(file)
-        file_data.each do |author|
-          author_instance = Author.new(author['first_name'], author['last_name'])
-          @authors.push(author_instance)
-        end
-      end
+  def read_authors
+    return unless File.exist?('./json/authors.json')
 
-      def save_authors
-        puts @authors
-        File.write('./json/authors.json', JSON.generate(@authors))
+    file = File.read('./json/authors.json')
+    file_data = JSON.parse(file)
+    file_data.each do |author|
+      author_instance = Author.new(author['first_name'], author['last_name'])
+      @authors.push(author_instance)
     end
+  end
+
+  def save_authors
+    puts @authors
+    File.write('./json/authors.json', JSON.generate(@authors))
+  end
 end
