@@ -30,9 +30,9 @@ To run the tests:
 
 # Catalog of things database
 
-![capture](catalog.PNG)
+![capture](./catalog.PNG)
 # Catalog of things UML diagram
-![capture](catalog_uml.PNG) 
+![capture](./catalog_uml.PNG) 
 
 
 ## Authors
