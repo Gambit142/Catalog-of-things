@@ -14,6 +14,12 @@ class Genre
   end
 
   def to_s
-    "Name of Genre: #{@name}\n#{@items[0].class.name}"
+    "Name of Genre: #{@name}, Genre Type: #{@items[0].class.name}"
+  end
+
+  def to_json(json)
+    json.generate({
+                        name: @name,
+                       })
   end
 end

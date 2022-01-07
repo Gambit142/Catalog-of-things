@@ -39,10 +39,13 @@ module BookUI
     else
       puts "List of all your books : \n"
       @books.each_with_index do |book, index|
-        print "#{index + 1} book :"
-        print "publisher: #{book.publisher}, "
-        print "publish date: #{book.published_date}, "
-        print "cover state: #{book.cover_state}"
+        puts "\n"
+        print "#{index + 1}) Book:\n"
+        print "Publisher: #{book.publisher}, "
+        print "Publish date: #{book.published_date}, "
+        print "Cover state: #{book.cover_state}."
+        puts "\n"
+        puts "_______________________________________________________________________"
         puts "\n"
       end
 

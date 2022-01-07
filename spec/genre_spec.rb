@@ -14,7 +14,7 @@ describe Genre do
 
   it 'should print a string when the to_s function is called' do
     string = @genre.to_s
-    expect(string).to eql "Name of Genre: Hip-Hop\nBook"
+    expect(string).to eql "Name of Genre: Hip-Hop, Genre Type: Book"
   end
 
   it 'should be an instance of Genre' do

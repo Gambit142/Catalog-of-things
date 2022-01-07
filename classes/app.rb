@@ -40,8 +40,8 @@ class App
     read_authors
     read_books
     read_labels
-    # read_musicalbums
-    # read_genres
+    read_musicalbums
+    read_genres
   end
 
   def menu

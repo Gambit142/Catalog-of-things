@@ -30,14 +30,18 @@ module GameUI
 
   def display_games
     if @games.length.zero?
-      puts 'No games added yet !'
+      puts "\n"
+      puts 'No games added yet!'
+      puts "\n"
     else
       puts "List of all your games : \n"
       @games.each_with_index do |game, index|
-        print "#{index + 1}: "
+        print "#{index + 1}) Games:\n"
         print "name: #{game.name}, "
         print "publish date: #{game.published_date}, "
-        print "multiplayer : #{game.multiplayer},"
+        print "multiplayer : #{game.multiplayer}."
+        puts "\n"
+        puts "____________________________________________________"
         puts "\n"
       end
     end

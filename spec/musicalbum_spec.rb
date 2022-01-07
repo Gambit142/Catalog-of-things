@@ -21,8 +21,8 @@ describe MusicAlbum do
   it 'should print a string when the to_s function is called' do
     string1 = @album1.to_s
     string2 = @album2.to_s
-    expect(string1).to eql "Music Album name: Roc Nation\npublished date: 2000-10-03\nHosted on Spotify: true"
-    expect(string2).to eql "Music Album name: AfterMath\npublished date: 2019-10-03\nHosted on Spotify: true"
+    expect(string1).to eql "Music Album Name: Roc Nation, Published Date: 2000-10-03, Hosted on Spotify: true."
+    expect(string2).to eql "Music Album Name: AfterMath, Published Date: 2019-10-03, Hosted on Spotify: true."
   end
 
   it 'should be archived if certain conditions are met' do

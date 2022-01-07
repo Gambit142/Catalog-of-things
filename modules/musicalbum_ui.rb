@@ -24,17 +24,22 @@ module MusicAlbumUI
     @musicalbums << musicalbum
     save_genre
     save_album
-    puts 'Music Album successfully added ! '
+    puts 'Music Album successfully added!'
   end
 
   def display_musicalbum
     if @musicalbums.length.zero?
-      puts 'No Music Album added yet !'
+      puts "\n"
+      puts 'No Music Album added yet!'
+      puts "\n"
     else
       puts "List of all your albums :\n"
       @musicalbums.each_with_index do |album, index|
-        puts "#{index + 1} Music Album :"
+        puts "\n"
+        puts "#{index + 1}) Music Album-\n"
         puts album
+        puts "_______________________________________________________________________"
+        puts "\n"
       end
     end
   end

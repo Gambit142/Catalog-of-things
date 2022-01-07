@@ -13,6 +13,15 @@ class MusicAlbum < Item
   end
 
   def to_s
-    "Music Album name: #{@label.title}\npublished date: #{@published_date}\nHosted on Spotify: #{@on_spotify}"
+    "Music Album Name: #{@label.title}, Published Date: #{@published_date}, Hosted on Spotify: #{@on_spotify}."
+  end
+
+  def to_json(json)
+    json.generate({
+                         date: @published_date,
+                         on_spotify: @on_spotify,
+                         title: @label.title,
+                         color: @label.color
+                       })
   end
 end
