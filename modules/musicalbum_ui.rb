@@ -10,10 +10,10 @@ module MusicAlbumUI
   include GenreStorage
 
   def create_musicalbum
-    print 'What date was this album published?'
+    print '  What date was this album published?'
     date = gets.chomp
 
-    print 'Is this album on spotify (Type True or False)'
+    print '  Is this album on spotify (Type true or false)'
     on_spotify = gets.chomp
     musicalbum = MusicAlbum.new(date, on_spotify: on_spotify)
 
@@ -24,21 +24,25 @@ module MusicAlbumUI
     @musicalbums << musicalbum
     save_genre
     save_album
-    puts 'Music Album successfully added!'
+    puts "\n"
+    puts Rainbow('  Music Album successfully added!').purple.bright.italic
+    puts "\n"
   end
 
   def display_musicalbum
     if @musicalbums.length.zero?
       puts "\n"
-      puts 'No Music Album added yet!'
+      puts Rainbow('  No Music Album added yet!').red.bright.italic
       puts "\n"
     else
-      puts "List of all your albums :\n"
+      puts "\n"
+      puts Rainbow("  List of all your albums :\n").gold.bright.blink
       @musicalbums.each_with_index do |album, index|
         puts "\n"
-        puts "#{index + 1}) Music Album-\n"
+        puts Rainbow("  #{index + 1}) Music Album:\n").purple.bright
         puts album
-        puts '_______________________________________________________________________'
+        puts "\n"
+        print Rainbow('_________________________________________________________________________________').purple
         puts "\n"
       end
     end

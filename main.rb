@@ -1,4 +1,5 @@
 require './classes/app'
+require 'rainbow'
 
 def main
   app = App.new

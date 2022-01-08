@@ -46,7 +46,8 @@ class App
 
   def menu
     Dir.mkdir 'json' unless Dir.exist? 'json'
-    puts "Welcome to your Catalog of things!\n"
+    puts "\n"
+    puts Rainbow("  Welcome to your Catalog of things!\n").gold.italic.blink
 
     @options = {
       '1': 'List all books',
@@ -62,9 +63,9 @@ class App
     }
 
     @options.each do |index, string|
-      puts "#{index} - #{string}"
+      puts Rainbow("  #{index} - #{string}").blue.bright
     end
-    print "\nEnter option from above list: "
+    print "\n  Enter option from above list: "
     gets.chomp.to_i
   end
 
@@ -92,10 +93,12 @@ class App
     when 8
       create_musicalbum
     when 10
-      puts 'Thanks for using our library app , hope to see you soon ! '
+      puts "\n"
+      puts Rainbow("  Thanks for visiting our catalog of things , hope to see you soon!\n").yellow.bright.italic.blink
       exit
     else
-      puts 'please Enter a valid number from 1 to 10'
+      puts "\n"
+      puts Rainbow('  Please Enter a Valid Number from 1 to 10').red.bold.italic
     end
   end
 

@@ -13,7 +13,7 @@ class MusicAlbum < Item
   end
 
   def to_s
-    "Music Album Name: #{@label.title}, Published Date: #{@published_date}, Hosted on Spotify: #{@on_spotify}."
+    Rainbow("  Music Album Name: #{@label.title}, Published Date: #{@published_date}, Hosted on Spotify: #{@on_spotify}.").purple.bright
   end
 
   def to_json(json)

@@ -13,13 +13,13 @@ module BookUI
   include LabelUI
 
   def create_book
-    print 'Published date:'
+    print '  Published date: '
     published_date = gets.chomp
 
-    print 'Publisher name:'
+    print '  Publisher name: '
     publisher = gets.chomp
 
-    print 'Cover State:'
+    print '  Cover State: '
     cover_state = gets.chomp
     created_book = Book.new(publisher, cover_state, published_date)
 
@@ -30,22 +30,26 @@ module BookUI
     @books << created_book
     save_book
     save_label
-    puts 'Book successfully added ! '
+    puts "\n"
+    puts Rainbow('  Book successfully added!').purple.bright.italic
+    puts "\n"
   end
 
   def display_books
     if @books.length.zero?
-      puts 'No books added yet !'
+      puts "\n"
+      puts Rainbow('  No books added yet!').red.bright.italic
     else
-      puts "List of all your books : \n"
+      puts "\n"
+      puts Rainbow("  List of all your books : ").gold.bright.blink
       @books.each_with_index do |book, index|
         puts "\n"
-        print "#{index + 1}) Book:\n"
-        print "Publisher: #{book.publisher}, "
-        print "Publish date: #{book.published_date}, "
-        print "Cover state: #{book.cover_state}."
+        print Rainbow("  #{index + 1}) Book:\n").purple.bright
+        print Rainbow("  Publisher: #{book.publisher},").purple.bright
+        print Rainbow("  Publish date: #{book.published_date},").purple.bright
+        print Rainbow("  Cover state: #{book.cover_state}.").purple.bright
         puts "\n"
-        puts '_______________________________________________________________________'
+        print Rainbow('_______________________________________________________________________').purple
         puts "\n"
       end
 
