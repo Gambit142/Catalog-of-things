@@ -30,12 +30,11 @@ module MusicAlbumUI
   end
 
   def display_musicalbum
+    puts "\n"
     if @musicalbums.length.zero?
-      puts "\n"
       puts Rainbow('  No Music Album added yet!').red.bright.italic
       puts "\n"
     else
-      puts "\n"
       puts Rainbow("  List of all your albums :\n").gold.bright.blink
       @musicalbums.each_with_index do |album, index|
         puts "\n"

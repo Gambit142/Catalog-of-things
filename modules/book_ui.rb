@@ -36,12 +36,11 @@ module BookUI
   end
 
   def display_books
+    puts "\n"
     if @books.length.zero?
-      puts "\n"
       puts Rainbow('  No books added yet!').red.bright.italic
     else
-      puts "\n"
-      puts Rainbow("  List of all your books : ").gold.bright.blink
+      puts Rainbow('  List of all your books : ').gold.bright.blink
       @books.each_with_index do |book, index|
         puts "\n"
         print Rainbow("  #{index + 1}) Book:\n").purple.bright
