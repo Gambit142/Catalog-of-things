@@ -4,16 +4,20 @@ require_relative '../classes/book'
 require_relative './label_ui'
 require_relative './book_storage'
 require_relative './label_storage'
+require_relative './genre_storage'
+require_relative './author_storage'
 require 'json'
 
 module BookUI
   include Associations
   include LabelStorage
   include BookStorage
+  include GenreStorage
+  include AuthorStorage
   include LabelUI
 
   def create_book
-    print '  Published date: '
+    print '  Published date (yyyy/mm/dd): '
     published_date = gets.chomp
 
     print '  Publisher name: '
@@ -30,6 +34,9 @@ module BookUI
     @books << created_book
     save_book
     save_label
+    save_genre
+    save_authors
+  
     puts "\n"
     puts Rainbow('  Book successfully added!').purple.bright.italic
     puts "\n"

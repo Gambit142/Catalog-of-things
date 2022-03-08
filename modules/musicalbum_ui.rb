@@ -1,6 +1,8 @@
 require_relative './associations'
 require_relative './musicalbum_storage'
 require_relative './genre_storage'
+require_relative './label_storage'
+require_relative './author_storage'
 require_relative '../classes/musicalbum'
 require_relative '../classes/label'
 
@@ -8,12 +10,14 @@ module MusicAlbumUI
   include Associations
   include MusicAlbumStorage
   include GenreStorage
+  include AuthorStorage
+  include LabelStorage
 
   def create_musicalbum
-    print '  What date was this album published?'
+    print '  What date was this album published? (yyyy/mm/dd) '
     date = gets.chomp
 
-    print '  Is this album on spotify (Type true or false)'
+    print '  Is this album on spotify (Type true or false) '
     on_spotify = gets.chomp
     musicalbum = MusicAlbum.new(date, on_spotify: on_spotify)
 
@@ -22,8 +26,11 @@ module MusicAlbumUI
     add_genre_info(musicalbum)
 
     @musicalbums << musicalbum
-    save_genre
     save_album
+    save_genre
+    save_authors
+    save_label
+  
     puts "\n"
     puts Rainbow('  Music Album successfully added!').purple.bright.italic
     puts "\n"

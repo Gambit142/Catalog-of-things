@@ -1,9 +1,18 @@
 require_relative '../classes/author'
 require_relative './associations'
 require_relative '../classes/game'
+require_relative './genre_storage'
+require_relative './label_storage'
+require_relative './author_storage'
+require_relative './game_storage'
 
 module GameUI
   include Associations
+  include GameStorage
+  include GenreStorage
+  include AuthorStorage
+  include LabelStorage
+
 
   def create_game
     print '  Enter name of your game :'
@@ -21,10 +30,14 @@ module GameUI
     created_game = Game.new(game_title, multiplayer, last_played_at, published_date)
     add_author_info(created_game)
     add_genre_info(created_game)
+    add_label_info(created_game)
 
     @games.push(created_game)
     save_authors
+    save_label
     save_game
+    save_genre
+
     puts "\n"
     puts Rainbow('  Game created successfully!').purple.bright.italic
   end
