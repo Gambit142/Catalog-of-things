@@ -65,7 +65,7 @@ class App
     @options.each do |index, string|
       puts Rainbow("  #{index} - #{string}").blue.bright
     end
-    print "\n  Enter option from above list: "
+    print "\n  Please enter an option from above list: "
     gets.chomp.to_i
   end
 
