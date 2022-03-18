@@ -28,11 +28,14 @@ To run the tests:
 - Run `gem install rspec` to install RSpec
 - Run `rspec spec --format documentation` to run the tests
 
-# Catalog of things database
+## Catalog of things Console Interaction
+![capture](./Application_Console.jpg)
+
+## Catalog of things database
 
 ![capture](./catalog.png)
 # Catalog of things UML diagram
-![capture](./catalog_uml.png) 
+![capture](./catalog_uml.png)
 
 
 ## Authors
